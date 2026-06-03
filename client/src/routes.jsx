@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "./components/publics/base/Layout";
+
 import LayoutDash from "./components/privates/base/LayoutDash";
 import Home from "./pages/Home";
 import Eventos from "./pages/Eventos";
@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/private/Dashboard";
 import MeuPerfil from "./pages/private/MeuPerfil";
 import MeusEventos from "./pages/private/MeusEventos";
+import Layout from "./components/publics/base/Layout";
 
 export const router = createBrowserRouter(
   [
