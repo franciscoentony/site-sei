@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Front-end to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main # Dispara o deploy sempre que houver push na main
 
 permissions:
   contents: read
@@ -11,44 +11,40 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps: deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Código
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Configurar o Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: client/package-lock.json
+          bun-version: latest
 
-      - name: Install dependencies
-        run: |
-          cd client
-          npm ci
+      - name: Instalar Dependências
+        run: bun install
+        working-directory: ./client # 👈 Entra na pasta client para instalar
 
-      - name: Build application
-        run: |
-          cd client
-          npm run build
+      - name: Rodar o Build do Vite
+        run: bun run build
+        working-directory: ./client # 👈 Ent─ra na pasta client para compilar
 
-      - name: Setup Pages
+      - name: Configurar Páginas
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload do Artefato Correto
         uses: actions/upload-pages-artifact@v3
         with:
-          path: client/dist
+          path: './client/dist' # 👈 Alvo certeiro na pasta dist gerada dentro de client
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy para GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
