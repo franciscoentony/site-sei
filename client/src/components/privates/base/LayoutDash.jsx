@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Footer from '../../publics/Base/Footer'
+import Footer from '../../publics/base/Footer'
 import LateralBar from './LateralBar';
 import Header from './Header';
 import { useState } from 'react';
