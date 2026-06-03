@@ -16,6 +16,8 @@ import CardSkeleton from "../components/SkeletonCard";
 import { useEffect, useState } from "react";
 import DestaquesSkeleton from "../components/SkeletonBanner";
 
+import { Link } from "react-router-dom";
+
 export default function Homepage() {
   const [loading, setLoading] = useState(true);
   const [banners, setBanners] = useState([]);
@@ -50,12 +52,12 @@ export default function Homepage() {
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-10 w-full">
             <ButtonLink link="/login" text="Entrar" />
-            <a
-              href="/cadastro"
+            <Link
+              to="/cadastro"
               className="border-2 border-white w-40 h-12 flex justify-center items-center rounded-xl hover:bg-white duration-500 font-semibold hover:text-dark-green hover:scale-105"
             >
               Cadastrar
-            </a>
+            </Link>
           </div>
         </div>
         <div className="w-full h-full relative flex justify-center items-center">

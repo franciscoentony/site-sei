@@ -2,6 +2,7 @@ import { faCalendar, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faCheckDouble, faDashboard, faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function LateralBar({ isOpen, onClose }) {
   const handleLinkClick = () => {
@@ -27,7 +28,7 @@ export default function LateralBar({ isOpen, onClose }) {
             <div className="bg-[#44ba6a] text-white p-1.5 rounded-lg flex items-center justify-center shadow-md shadow-emerald-900/50">
               <FontAwesomeIcon icon={faCheckDouble} className="text-lg"/>
             </div>
-            <a href='/' className="text-2xl font-black tracking-wider text-white" onClick={handleLinkClick}>SEI</a>
+            <Link to='/' className="text-2xl font-black tracking-wider text-white" onClick={handleLinkClick}>SEI</Link>
           </div>
 
           {/* Links de Navegação */}

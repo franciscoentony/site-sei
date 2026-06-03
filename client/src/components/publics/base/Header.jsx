@@ -5,6 +5,7 @@ import {
   faMagnifyingGlass,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,25 +24,25 @@ export default function Header() {
         {/* Top Bar */}
         <div className="w-full h-20 min-h-20 flex justify-between items-center px-6 md:px-10">
           <div className="logo flex justify-center items-center">
-            <a href="/" className="text-2xl font-black tracking-wider text-white">
+            <Link to="/" className="text-2xl font-black tracking-wider text-white">
               SEI
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Nav */}
           <div className="header-nav hidden md:flex items-center text-white font-semibold gap-6">
-            <a href="/eventos" className="hover:text-stone-200 transition-colors">
+            <Link to="/eventos" className="hover:text-stone-200 transition-colors">
               Eventos
-            </a>
-            <a href="/cadastro" className="hover:text-stone-200 transition-colors">
+            </Link>
+            <Link to="/cadastro" className="hover:text-stone-200 transition-colors">
               Cadastro
-            </a>
-            <a
-              href="/login"
+            </Link>
+            <Link
+              to="/login"
               className="bg-white text-dark-green w-25 h-11 rounded-xl flex items-center justify-center hover:bg-stone-200 duration-300 font-bold"
             >
               Entrar
-            </a>
+            </Link>
             <div className="search-button bg-white w-10 h-10 flex justify-center items-center rounded-full">
               <button
                 type="button"
@@ -73,31 +74,31 @@ export default function Header() {
         >
           <ul className="flex flex-col gap-4 text-white font-semibold text-lg pb-2">
             <li className="border-b border-white/20 pb-2">
-              <a
-                href="/eventos"
+              <Link
+                to="/eventos"
                 className="block w-full hover:text-stone-200 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Eventos
-              </a>
+              </Link>
             </li>
             <li className="border-b border-white/20 pb-2">
-              <a
-                href="/cadastro"
+              <Link
+                to="/cadastro"
                 className="block w-full hover:text-stone-200 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Cadastro
-              </a>
+              </Link>
             </li>
             <li className="pt-2">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="bg-white text-dark-green w-full h-12 rounded-xl flex items-center justify-center hover:bg-stone-200 duration-300 font-bold"
                 onClick={() => setIsOpen(false)}
               >
                 Entrar
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

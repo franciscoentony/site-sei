@@ -4,11 +4,13 @@ import {
   faPeopleGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { Link } from "react-router-dom";
+
 export default function CardEventos(props) {
   return (
     <div className="w-full flex justify-center h-auto max-h-125">
       {/* Card */}
-      <a href="#" className="relative w-full h-full group cursor-pointer">
+      <Link to="#" className="relative w-full h-full group cursor-pointer">
         {/* Imagem/banner */}
         <div className="h-50 rounded-2xl overflow-hidden">
           <img
@@ -37,7 +39,7 @@ export default function CardEventos(props) {
           <p className="text-dark-green line-clamp-3">{props.description}</p>
           <span className="text-stone-400 text-sm font-medium">{props.category} - {props.date}</span>
         </div>
-      </a>
+      </Li>
     </div>
   );
 }

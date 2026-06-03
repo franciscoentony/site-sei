@@ -1,6 +1,7 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Input from "../components/Input";
 import InputSenha from "../components/InputSenha";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -21,12 +22,12 @@ export default function Login() {
           />
           <InputSenha text="Senha" />
           <div className="flex justify-end">
-            <a
-              href="#"
+            <Link
+              to="#"
               className="text-strong-green font-semibold duration-200 hover:text-green-700 text-sm md:text-base"
             >
               Esqueceu a senha?
-            </a>
+            </Link>
           </div>
         </div>
         <button
@@ -36,9 +37,9 @@ export default function Login() {
           Entrar
         </button>
         <div className="mt-5 flex flex-col text-center">
-          <a href="" className="mb-1 font-semibold hover:text-light-green duration-300 ease-in-out text-sm md:text-base">
+          <Link to="" className="mb-1 font-semibold hover:text-light-green duration-300 ease-in-out text-sm md:text-base">
             Não tem conta ainda? Cadastre-se
-          </a>
+          </Link>
         </div>
       </form>
     </div>
