@@ -3,11 +3,8 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => {
-  return {
-    plugins: [react(), tailwindcss()],
-    // Se for 'build' (GitHub), usa '/site-sei/'. Se for dev (Localhost), usa '/' 
-    base: command === 'build' ? '/site-sei/' : '/',
-  }
-})
+export default defineConfig(({ command }) => ({
+  plugins: [react(), tailwindcss()],
+  base: command === 'build' ? '/site-sei/' : '/',
+}))
 

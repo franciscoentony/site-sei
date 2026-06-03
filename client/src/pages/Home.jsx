@@ -60,7 +60,7 @@ export default function Homepage() {
         </div>
         <div className="w-full h-full relative flex justify-center items-center">
           <img
-            src="/IFRN-Salgado-Filho-2-scaled.webp"
+            src={`${import.meta.env.BASE_URL}/IFRN-Salgado-Filho-2-scaled.webp`}
             alt="banner"
             draggable="false"
             className="w-full h-full object-cover"
