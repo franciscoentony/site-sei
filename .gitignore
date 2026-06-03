@@ -1,0 +1,31 @@
+# dependencias (NUNCA envie para o git)
+node_modules/
+client/node_modules/
+
+# pastas de build/compilação
+dist/
+client/dist/
+.cache/
+
+# arquivos do sistema operacional Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# arquivos de ambiente / chaves secretas (segurança)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# logs de erro
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun.log*
+
+# configurações locais de editores (opcional)
+.vscode/
+.idea/
