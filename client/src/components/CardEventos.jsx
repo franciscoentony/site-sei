@@ -39,7 +39,7 @@ export default function CardEventos(props) {
           <p className="text-dark-green line-clamp-3">{props.description}</p>
           <span className="text-stone-400 text-sm font-medium">{props.category} - {props.date}</span>
         </div>
-      </Li>
+      </Link>
     </div>
   );
 }
